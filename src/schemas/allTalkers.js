@@ -1,14 +1,12 @@
 module.exports = (talkers) => {
   if (talkers.length === 0) {
-    return { 
-      status: 200, 
-      message: 'ok', 
+    return {  
+      data: [], 
       response: false, 
     };
   }
-  return { 
-    status: 200, 
-    message: 'ok', 
+  return {  
+    data: talkers, 
     response: true, 
   };
 };

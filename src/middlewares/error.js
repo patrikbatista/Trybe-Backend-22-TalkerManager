@@ -1,4 +1,4 @@
-module.exports = (error, res, _req, _next) => {
+module.exports = (error, _req, res, _next) => {
   console.log(error);
-  res.status(500).json({ message: 'erro interno' });
+  return res.status(500).json({ message: 'erro interno' });
 };
