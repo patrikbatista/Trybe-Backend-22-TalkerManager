@@ -12,6 +12,7 @@ const HTTP_OK_STATUS = 200;
 const PORT = '3000';
 
 app.use('/talker', routes.talker);
+app.use('/login', routes.login);
 app.use(middlewares.error);
 
 // não remova esse endpoint, e para o avaliador funcionar
