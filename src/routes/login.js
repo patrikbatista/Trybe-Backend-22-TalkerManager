@@ -1,7 +1,11 @@
 const { Router } = require('express');
-// const rescue = require('express-rescue');
+const middlewares = require('../middlewares');
+const controllers = require('../controllers');
 
 const login = Router();
-login.post('/', (req, res, _next) => res.end());
+login.post('/', 
+  middlewares.emailValidate,
+  middlewares.passwordValidate,
+  controllers.login);
 
 module.exports = login;
