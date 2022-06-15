@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+require('express-async-errors');
 
 const middlewares = require('./src/middlewares');
 const routes = require('./src/routes');
