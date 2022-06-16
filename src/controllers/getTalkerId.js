@@ -1,8 +1,8 @@
 const services = require('../services');
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   const { id } = req.params;
-  const talker = services.getTalkerId(id);
+  const talker = await services.getTalkerId(id);
   if (!talker) {
     return res.status(404).json({ message: 'Pessoa palestrante não encontrada' });
   }

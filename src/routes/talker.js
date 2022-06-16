@@ -6,7 +6,7 @@ const controller = require('../controllers');
 const talker = Router();
 talker.post('/', (req, res, _next) => res.end());
 talker.get('/', controller.getAllTalkers);
-talker.get('/id', (req, res, _next) => res.end());
+talker.get('/:id', controller.getTalkerId);
 talker.put('/id', (req, res, _next) => res.end());
 talker.delete('/id', (req, res, _next) => res.end());
 
