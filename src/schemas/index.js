@@ -4,6 +4,7 @@ const isPassword = require('./isPassword');
 const isAge = require('./isAge');
 const isName = require('./isName');
 const isToken = require('./isToken');  
+const isRate = require('./isRate');
 
 module.exports = {
   allTalkers,
@@ -12,4 +13,5 @@ module.exports = {
   isToken,
   isName,
   isAge,
+  isRate,
 };
