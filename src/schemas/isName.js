@@ -10,4 +10,5 @@ module.exports = (name) => {
       response: false,  
     };
   }
+  return true;
 };
