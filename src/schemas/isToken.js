@@ -1,11 +1,14 @@
 module.exports = (token) => {
   if (!token) {
-    return { data: 'Token não encontrado',
-    response: false,  
+    return { 
+      status: 401,
+      data: 'Token não encontrado',
+      response: false,  
   }; 
   }
   if (token.length < 16) {
-    return { 
+    return {
+      status: 401,
       data: 'Token inválido', 
       response: false,  
     };
