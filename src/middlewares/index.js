@@ -6,6 +6,7 @@ const nameValidate = require('./nameValidate');
 const rateValidate = require('./rateValidate');
 const talkValidate = require('./talkValidate');
 const tokenValidate = require('./tokenValidate');
+const watchedAtValidate = require('./watcheAtValidate');
 
 module.exports = {
   error,
@@ -16,4 +17,5 @@ module.exports = {
   rateValidate,
   talkValidate,
   tokenValidate,
+  watchedAtValidate,
 };
