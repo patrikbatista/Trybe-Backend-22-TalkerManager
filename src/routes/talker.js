@@ -1,10 +1,15 @@
 const { Router } = require('express');
 
 const controller = require('../controllers');
-// const middlewares = require('../middlewares');
+const middlewares = require('../middlewares');
 
 const talker = Router();
-talker.post('/', (req, res, _next) => res.end());
+talker.post('/', 
+  middlewares.tokenValidate,
+  middlewares.nameValidate,
+  middlewares.ageValidate,
+  middlewares.talkValidate,
+  middlewares.rateValidate);
 talker.get('/', controller.getAllTalkers);
 talker.get('/:id', controller.getTalkerId);
 talker.put('/id', (req, res, _next) => res.end());
