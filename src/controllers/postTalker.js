@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
     talk,
   };
   talkers.push(newTalk);
-  fs.writeFile('./talker.json', JSON.stringify(talkers));
+  await fs.writeFile('./talker.json', JSON.stringify(talkers));
+  console.log(talkers);
   res.status(201).json(newTalk);
 };
