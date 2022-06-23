@@ -1,5 +1,5 @@
 module.exports = (password) => {
-  if (password.length < 6) {
+  if (!password) {
     return false;
   }
   return true;

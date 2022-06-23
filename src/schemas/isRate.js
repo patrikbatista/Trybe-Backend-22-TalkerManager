@@ -1,17 +1,6 @@
 module.exports = (rate) => {
-  if (!rate) {
-    return { 
-      status: 400,
-      data: 'O campo "rate" deve ser um inteiro de 1 à 5',
-      response: false,  
-  }; 
-  }
-  if (typeof rate !== 'number') {
-    return { 
-      status: 400,
-      data: 'O campo "rate" deve ser um inteiro de 1 à 5', 
-      response: false,  
-    };
+  if (!Number.isInteger(rate) || (Number(rate) < 1) || (Number(rate) > 5)) {
+    return false; 
   }
   return true;
 };

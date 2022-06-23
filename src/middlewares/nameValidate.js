@@ -5,8 +5,12 @@ module.exports = (req, res, next) => {
 
   const validatedName = schemas.isName(name);
 
-  if (!validatedName.response) {
-    return res.status(validatedName.status).json({ message: validatedName.data });
+  if (!validatedName) {
+    return res.status(400).json({ message: 'O campo "name" é obrigatório' });
+  }
+  
+  if (name.length) {
+    return res.status(400).json({ message: 'O "name" deve ter pelo menos 3 caracteres' });
   }
 
   next();
