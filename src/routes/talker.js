@@ -9,6 +9,7 @@ talker.post('/',
   middlewares.nameValidate,
   middlewares.ageValidate,
   middlewares.talkValidate,
+  middlewares.watchedAtValidate,
   middlewares.rateValidate);
 talker.get('/', controller.getAllTalkers);
 talker.get('/:id', controller.getTalkerId);
