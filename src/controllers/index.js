@@ -4,6 +4,7 @@ const getTalkerId = require('./getTalkerId');
 const postTalker = require('./postTalker');
 const postTalkerId = require('./postTalkerId');
 const deleteTalker = require('./deleteTalker');
+const getTalkerSearch = require('./getTalkerSearch');
 
 module.exports = {
   getAllTalkers,
@@ -12,4 +13,5 @@ module.exports = {
   postTalker,
   postTalkerId,
   deleteTalker,
+  getTalkerSearch,
 };

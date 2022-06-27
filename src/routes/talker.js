@@ -6,7 +6,7 @@ const middlewares = require('../middlewares');
 const talker = Router();
 talker.get('/', controller.getAllTalkers);
 talker.get('/:id', controller.getTalkerId);
-talker.delete('/id', (req, res, _next) => res.end());
+talker.delete('/id', controller.deleteTalker);
 talker.use(
   middlewares.tokenValidate,
   middlewares.nameValidate,
