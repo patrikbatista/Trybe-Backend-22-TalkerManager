@@ -14,6 +14,5 @@ module.exports = async (req, res) => {
   };
   talkers.push(newTalk);
   await fs.writeFile('./talker.json', JSON.stringify(talkers));
-  console.log(talkers);
   res.status(201).json(newTalk);
 };

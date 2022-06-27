@@ -10,7 +10,8 @@ talker.post('/',
   middlewares.ageValidate,
   middlewares.talkValidate,
   middlewares.watchedAtValidate,
-  middlewares.rateValidate);
+  middlewares.rateValidate,
+  controller.postTalker);
 talker.get('/', controller.getAllTalkers);
 talker.get('/:id', controller.getTalkerId);
 talker.put('/id', (req, res, _next) => res.end());
