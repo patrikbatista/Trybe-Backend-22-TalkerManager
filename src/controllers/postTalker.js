@@ -1,4 +1,3 @@
-const fs = require('fs/promises');
 const services = require('../services');
 
 module.exports = async (req, res) => {
@@ -13,6 +12,6 @@ module.exports = async (req, res) => {
     talk,
   };
   talkers.push(newTalk);
-  await fs.writeFile('./talker.json', JSON.stringify(talkers));
+  await services.writeTalk(talkers);
   res.status(201).json(newTalk);
 };
