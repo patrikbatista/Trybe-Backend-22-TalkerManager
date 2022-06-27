@@ -9,6 +9,9 @@ talker.get('/:id', controller.getTalkerId);
 talker.get('/talker/search', 
 middlewares.tokenValidate,
 controller.getTalkerSearch);
+talker.delete('/:id', 
+middlewares.tokenValidate,
+controller.deleteTalker);
 talker.use(
   middlewares.tokenValidate,
   middlewares.nameValidate,
@@ -16,8 +19,8 @@ talker.use(
   middlewares.talkValidate,
   middlewares.watchedAtValidate,
   middlewares.rateValidate, 
-  );
-talker.delete('/:id', controller.deleteTalker);
+);
+
 talker.post('/', controller.postTalker);
 talker.put('/:id', controller.postTalkerId);
 
