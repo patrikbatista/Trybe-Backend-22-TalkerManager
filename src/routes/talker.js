@@ -6,7 +6,9 @@ const middlewares = require('../middlewares');
 const talker = Router();
 talker.get('/', controller.getAllTalkers);
 talker.get('/:id', controller.getTalkerId);
-talker.delete('/id', controller.deleteTalker);
+talker.get('/talker/search', 
+middlewares.tokenValidate,
+controller.getTalkerSearch);
 talker.use(
   middlewares.tokenValidate,
   middlewares.nameValidate,
@@ -14,10 +16,9 @@ talker.use(
   middlewares.talkValidate,
   middlewares.watchedAtValidate,
   middlewares.rateValidate, 
-);
-talker.post('/', 
-  controller.postTalker);
-talker.put('/id', 
-  controller.postTalkerId);
+  );
+talker.delete('/:id', controller.deleteTalker);
+talker.post('/', controller.postTalker);
+talker.put('/:id', controller.postTalkerId);
 
 module.exports = talker;

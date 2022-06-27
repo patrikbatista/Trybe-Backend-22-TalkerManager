@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
         message: 'O campo "talk" é obrigatório' });
     }
     const { watchedAt, rate } = talk;
-    if (!rate) return res.status(400).json({ message: 'O campo "rate" é obrigatório' }); 
+    if (rate === undefined) return res.status(400).json({ message: 'O campo "rate" é obrigatório' }); 
     if (!watchedAt) return res.status(400).json({ message: 'O campo "watchedAt" é obrigatório' });
   
     if (watchedAt === undefined || rate === undefined) {
