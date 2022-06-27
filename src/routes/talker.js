@@ -5,12 +5,13 @@ const middlewares = require('../middlewares');
 
 const talker = Router();
 talker.get('/', controller.getAllTalkers);
+talker.get('/search',
+middlewares.tokenValidate, 
+controller.getTalkerSearch);
 talker.get('/:id', controller.getTalkerId);
 
 talker.use(middlewares.tokenValidate);
 
-talker.get('/talker/search', 
-controller.getTalkerSearch);
 talker.delete('/:id', 
 controller.deleteTalker);
 
