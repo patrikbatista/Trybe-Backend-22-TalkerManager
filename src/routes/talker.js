@@ -13,11 +13,11 @@ talker.use(
   middlewares.ageValidate,
   middlewares.talkValidate,
   middlewares.watchedAtValidate,
-  middlewares.rateValidate,
+  middlewares.rateValidate, 
 );
 talker.post('/', 
   controller.postTalker);
 talker.put('/id', 
-  middlewares.rateValidate);
+(req, res, _next) => res.end());
 
 module.exports = talker;
