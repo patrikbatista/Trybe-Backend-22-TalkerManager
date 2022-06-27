@@ -18,6 +18,6 @@ talker.use(
 talker.post('/', 
   controller.postTalker);
 talker.put('/id', 
-(req, res, _next) => res.end());
+  controller.postTalkerId);
 
 module.exports = talker;
